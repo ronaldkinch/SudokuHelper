@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Suduku Helper -->
+<html>
+<head>
+  <title>Sudoku Helper</title>
+  <link rel="stylesheet" type="text/css" href="css/sudoku-helper.css"/>
+  <link rel="stylesheet" type="text/css" href="css/modal-window.css" />
+</head>
+
+<body>
+  <div id="banner">
+    <h1>Sudoku Helper</h1>
+    <!-- JavaScript enabled check -->
+    <p id="js-warning">Sorry! JavaScript must be enabled.</p>
+    <script type="text/javascript">
+      var el = document.getElementById('js-warning');
+      el.parentNode.removeChild(el);
+    </script>
+
+    <!-- Modal Help page -->
+    <button type="button" id="modal-button">Help</button>
+    <div id="modal-content">
+      <object type="text/html" data="sudoku-helper-help.html">Help File</object>
+    </div>
+
+    <!-- Puzzle configuration setup -->
+    <fieldset id="setup">
+      <p id="size">Size:( 3 by 3 )</p>
+      <button id="start">Start</button>
+      <div>
+        <button type="button" id="custom">Customize</button>
+      </div>
+    </fieldset>
+
+    <!-- Puzzle configuartion entry -->
+    <fieldset id="entry">
+      <p>Size:(<span>
+        <input type="text" maxlength="1" id="x">
+      </span>by<span>
+        <input type="text" maxlength="1" id="y">
+      </span>)</p>
+      <div class="high">
+        <label>Sudoku character set<br/>
+          <input type="text" maxlength="36" id="charSet">
+        </label>
+      </div>
+      <div class="high">
+        <p id="error">Error</p>
+      </div>
+      <div class="high">
+        <button type="button" id="save">Save</button>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Puzzle -->
+  <div id="puzzle">
+    <div class="cell" data-size="4" data-blk="blk" data-col="col" data-row="row">
+      <input type="text" class="cellInput">
+      <div class="cellText"></div>
+      <div class="cellBack">123456789abcdef0</div>
+      <div class="cellMask2">&#9608&#160&#9608</div>
+      <div class="cellMask1">&#9608&#9608&#160</div>
+    </div>
+    <table id="grid"></table>
+    <div>
+      <button type="button" class="assist">1</button>
+      <button type="button" class="assist">2</button>
+      <button type="button" class="assist">3</button>
+      <button type="button" id="asst4">4</button>
+      <button type="button" id="asst5">5</button>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+  <script src="js/sudoku-helper.js"></script>
+  <script src="js/modal-window.js"></script>
+</body>
+</html>

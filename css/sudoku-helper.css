@@ -1,0 +1,86 @@
+/* Sudoku Helper */
+* {text-align: center; margin: 0px auto;}
+body {width: 90%; background-color: gray;}
+p, button, input {font-size: 20px;}
+h1 {font-size: 48px; margin-bottom: .33em;}
+#setup, #entry, #puzzle, #modal-content {display: none;}
+.high {margin: 30px auto;}
+
+/* Puzzle configuration */
+fieldset {height: 298px;}
+input {font-family: Courier;}
+#banner, #puzzle {
+  width: 200;
+  font-family: 'Times New Roman', serif;
+  border: 1px solid silver;
+  background-color: silver;
+}
+#size {padding-top: 1.8px; word-spacing: 3.5px}
+#custom {position: relative; top: -275px; left: 35%;}
+#start {
+  height: 150px; width: 150px;
+  margin: 1em;
+  border: 5px ridge gray;
+  border-radius: 200px;
+  font-size: 48px;
+  background-color: green;
+}
+#x, #y {width: 13px;}
+#charSet {width: 194px;}
+#error {margin-right: 200%;}
+
+/* Puzzle */
+#grid {
+  border: 3px solid black;
+  margin-bottom: 20px;
+  background-color: white;
+}
+table, td {padding: 0px; border-collapse: collapse;}
+table {border: 2px solid black;}
+td {border: 1px solid black;}
+.cell {position: relative;}
+.cell * {
+  font-family: 'Courier';
+  font-size: 16px;
+  letter-spacing: 7.2px;
+  text-align: center;
+  word-wrap: break-word;
+  background-color: transparent;
+  height: inherit; width: inherit;
+  position: absolute;
+  top: 0px; left: 3.6px;
+}
+.cell[data-size='4'] {height: 72px; width: 72px;}
+.cell[data-size='3'] {height: 54px; width: 54px;}
+.cell[data-size='2'] {height: 36px; width: 36px;}
+.cell[data-size='4'] .cellText {
+  font-size: 48px; top: 9.6px;}
+.cell[data-size='3'] .cellText {
+  font-size: 36px; top: 7.2px;}
+.cell[data-size='2'] .cellText {
+  font-size: 24px; top: 4.8px;}
+.cell[data-size='4'] .cellInput {font-size: 48px;}
+.cell[data-size='3'] .cellInput {font-size: 36px;}
+.cell[data-size='2'] .cellInput {font-size: 24px;}
+
+.group {background-color: #e0e0e0;}
+.cellMask1 {
+  color: #ffff00;
+}
+.cellMask2 {
+  z-index: 2;
+  color: #00a1f4;
+  opacity: .5;
+}
+.cellBack {
+  z-index: 4;
+}
+.cellText {
+  z-index: 6;
+}
+.cellInput {
+  z-index: 8;
+  border: none;
+  padding: 0px;
+}
+.error {background-color: red;}
